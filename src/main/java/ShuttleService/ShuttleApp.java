@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan("SUShuttleService.SUBackEnd")
-public class SUShuttleApp {
+@EntityScan("ShuttleService.SUBackEnd")
+public class ShuttleApp {
     public static void main(String[] args) {
-        SpringApplication.run(SUShuttleApp.class, args);
+        SpringApplication.run(ShuttleApp.class, args);
     }
 }
