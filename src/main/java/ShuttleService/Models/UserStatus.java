@@ -1,4 +1,4 @@
-package SUShuttleService.Models;
+package ShuttleService.Models;
 
 public enum UserStatus {
     ENROUTE,

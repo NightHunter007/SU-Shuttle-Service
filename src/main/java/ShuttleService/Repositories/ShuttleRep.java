@@ -1,7 +1,7 @@
-package SUShuttleService.Repositories;
+package ShuttleService.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import SUShuttleService.Models.ShuttleLocation;
+import ShuttleService.Models.ShuttleLocation;
 import org.springframework.stereotype.Repository;
 
 @Repository

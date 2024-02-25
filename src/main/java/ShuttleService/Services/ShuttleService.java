@@ -1,8 +1,8 @@
-package SUShuttleService.Services;
+package ShuttleService.Services;
 
 import java.util.*;
-import SUShuttleService.Repositories.*;
-import SUShuttleService.Models.*;
+import ShuttleService.Repositories.*;
+import ShuttleService.Models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +18,10 @@ public class ShuttleService {
     private double CurrentLongitude = 0.0 ;
 
 
-    private static Queue<Users> waitingQueue = new LinkedList<>();
+    private static Queue<Users> waitingQueue = new LinkedList<>(); // we use a waiting Queue to add passengers and see if seats are available
 
+
+    // user registration method
     public String SignIn(Integer suid, String name, String email, String address) {
         if (!isValidSuidLength(suid)) {
             return "Please enter a valid 9-digit SUID";
@@ -46,6 +48,8 @@ public class ShuttleService {
         return SUID.toString().length() == 9;
     }
 
+
+    // user wants to be picked up
     public List<String> UserPickUpRequests(Integer SUID){
         List<String> response = new ArrayList<>();
         Users user = users.findBySUID(SUID);
@@ -87,6 +91,8 @@ public class ShuttleService {
         return users.findAll();
     }
 
+
+    // method to update the shuttle location
     public String ShuttleLocation(double Latitude,double Longitude,int ShuttleID){
         ShuttleLocation s = new ShuttleLocation();
         s.setLatitude(Latitude);
@@ -94,10 +100,12 @@ public class ShuttleService {
         s.setSeats(30);
         s.setShuttleID(ShuttleID);
         shuttlelocation.save(s);
-        return "Shuttle Location have been updated";
+        return "Shuttle Location has been updated";
     }
 
 
+
+    // method to add passengers to the shuttle with a maximum seating capacity of 30
     public String AddShuttleUser() {
         ShuttleLocation shuttle = new ShuttleLocation();
         System.out.println(waitingQueue);

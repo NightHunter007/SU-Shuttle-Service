@@ -1,8 +1,8 @@
-package SUShuttleService.Repositories;
+package ShuttleService.Repositories;
 
 import java.util.List;
-import SUShuttleService.Models.Users;
-import SUShuttleService.Models.UserStatus;
+import ShuttleService.Models.Users;
+import ShuttleService.Models.UserStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
